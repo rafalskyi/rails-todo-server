@@ -29,7 +29,11 @@ gem 'jwt'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec', '~> 3.5'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-json_expectations'
+  gem 'pry-byebug' # Buybug debugger
+  gem 'pry-stack_explorer' # Show stack trace
 end
 
 group :development do
