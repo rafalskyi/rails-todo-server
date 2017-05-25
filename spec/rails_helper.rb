@@ -83,6 +83,7 @@ RSpec.configure do |config|
   end
 
   # include it as shared module for all request specs in the RSpec configuration block.
-  config.include RequestSpecHelper, type: :request
+  config.include RequestSpecHelper
+  config.include ControllerSpecHelper
 
 end
