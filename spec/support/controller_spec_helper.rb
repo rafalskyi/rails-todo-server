@@ -10,10 +10,11 @@ module ControllerSpecHelper
   end
 
   # return valid headers
-  def valid_headers
+  def valid_headers(default = "v1")
     {
       "Authorization" => token_generator(user.id),
-      "Content-Type" => "application/json"
+      "Content-Type" => "application/json",
+      "Accept" => "application/vnd.todos.#{default}+json"
     }
   end
 
