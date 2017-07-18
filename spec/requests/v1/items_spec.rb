@@ -90,7 +90,7 @@ RSpec.describe 'Items API' do
 
   # Test suite for PUT /todos/:todo_id/items/:id
   describe 'PUT /todos/:todo_id/items/:id' do
-    let(:valid_attributes) { { name: 'Mozart' }.to_json }
+    let(:valid_attributes) { { name: 'Mozart', done: true }.to_json }
 
     before { put "/todos/#{todo_id}/items/#{id}", params: valid_attributes, headers: headers }
 
@@ -102,6 +102,7 @@ RSpec.describe 'Items API' do
       it 'updates the item' do
         updated_item = Item.find(id)
         expect(updated_item.name).to match(/Mozart/)
+        expect(updated_item.done).equal?(1)
       end
     end
 
