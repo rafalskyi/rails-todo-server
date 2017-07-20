@@ -16,4 +16,10 @@ Rails.application.routes.draw do
 
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
+
+  post 'auth/:provider/callback', to: 'authentication#authenticate_social'
+  #get 'auth/:provider/callback', to: 'authentication#authenticate_social'
+  get 'auth/failure', to: 'authentication#authenticate_social'
+
+
 end
